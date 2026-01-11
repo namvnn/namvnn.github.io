@@ -14,15 +14,15 @@ if [[ ! -f "$block_path" ]]; then
 fi
 
 shift
-targets=( "$@" )
+targets=("$@")
 
 if (( ${#targets[@]} == 0 )); then
   targets=( $(find "$SRC_PATH" -type f -name '*.html') )
 fi
 
 for target in "${targets[@]}"; do
-  start_line_numbers=( $(sed -n "/<!-- block-start: $block -->/=" "$target") )
-  end_line_numbers=( $(sed -n "/<!-- block-end: $block -->/=" "$target") )
+  start_line_numbers=($(sed -n "/<!-- block-start: $block -->/=" "$target"))
+  end_line_numbers=($(sed -n "/<!-- block-end: $block -->/=" "$target"))
 
   if [[ "${#start_line_numbers[@]}" -ne "${#end_line_numbers[@]}" ]]; then
     echo "$target: '$block' mismatched number of start/end block tags"
@@ -30,8 +30,8 @@ for target in "${targets[@]}"; do
   fi
 
   for index in "${!start_line_numbers[@]}"; do
-    start_line_numbers=( $(sed -n "/<!-- block-start: $block -->/=" "$target") )
-    end_line_numbers=( $(sed -n "/<!-- block-end: $block -->/=" "$target") )
+    start_line_numbers=($(sed -n "/<!-- block-start: $block -->/=" "$target"))
+    end_line_numbers=($(sed -n "/<!-- block-end: $block -->/=" "$target"))
 
     if [[ "${#start_line_numbers[@]}" -ne "${#end_line_numbers[@]}" ]]; then
       echo "$target: '$block' mismatched number of start/end block tags"
