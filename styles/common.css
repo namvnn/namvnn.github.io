@@ -273,10 +273,6 @@ b, strong {
     font-weight: var(--font-weight-bold);
 }
 
-ul li:has(> :not(a:first-child))::marker {
-    color: var(--color-x);
-}
-
 footer {
     font-size: var(--text-sm);
     line-height: var(--text-sm--line-height);
