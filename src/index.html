@@ -29,8 +29,12 @@
       --grid-gap: calc(var(--spacing) * 10);
     }
 
-    .connect {
-      --flow-x-space: calc(var(--spacing) * 4);
+    .connect tr td:first-child {
+      vertical-align: top;
+    }
+    .connect tr td:first-child {
+      text-align: right;
+      padding-right: calc(var(--spacing) * 3);
     }
   </style>
 </head>
@@ -141,10 +145,12 @@
 
     <section>
       <h2>Connect</h2>
-      <p class="[ connect ] [ flow-x ]">
-        <a href="mailto:nguyenvietnam2401@gmail.com">nguyenvietnam2401@gmail.com</a>
-        <a href="https://github.com/namvnn" target="_blank">github/namvnn</a>
-      </p>
+      <table class="[ connect ]">
+        <tbody>
+          <tr><td> GitHub:</td><td><a href="https://github.com/namvnn" target="_blank">github.com/namvnn</a></td></tr>
+          <tr><td>  Email:</td><td><a href="">nguyenvietnam2401 <em>[at]</em> gmail <em>[dot]</em> com</a></td></tr>
+        </tbody>
+      </table>
     </section>
   </main>
 
