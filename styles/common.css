@@ -91,12 +91,12 @@
 
 /* Use a more-intuitive box-sizing model */
 *,
-    *::before,
-    *::after {
-        box-sizing: border-box;
-    }
+*::before,
+*::after {
+    box-sizing: border-box;
+}
 
-    /* Remove default margin */
+/* Remove default margin */
 * {
     margin: 0;
 }
